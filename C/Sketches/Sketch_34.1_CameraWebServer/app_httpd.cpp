@@ -658,6 +658,9 @@ static esp_err_t index_handler(httpd_req_t *req) {
       return httpd_resp_send(req, (const char *)index_ov3660_html_gz, index_ov3660_html_gz_len);
     } else if (s->id.PID == OV5640_PID) {
       return httpd_resp_send(req, (const char *)index_ov5640_html_gz, index_ov5640_html_gz_len);
+    } 
+    else if (s->id.PID == GC0308_PID) {
+      return httpd_resp_send(req, (const char *)index_gc0308_html_gz, index_gc0308_html_gz_len);
     } else {
       return httpd_resp_send(req, (const char *)index_ov2640_html_gz, index_ov2640_html_gz_len);
     }
